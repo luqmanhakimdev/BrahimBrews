@@ -48,11 +48,14 @@
             <div class="mt-4 flex justify-center">
             <x-jet-label value="{{ __('New user?') }}" />
             </div>
+            </form>
             <div class="mt-4">
-            <x-jet-button class="group relative w-full flex justify-center">
-                    {{ __('Create account') }}
-                </x-jet-button>
+                <a href="{{ route('register') }}">
+                    <x-jet-button class="group relative w-full flex justify-center">
+                        {{ __('Create account') }}
+                    </x-jet-button>
+                </a>
             </div>
-        </form>
+        
     </x-jet-authentication-card>
 </x-guest-layout>
