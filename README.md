@@ -1,6 +1,8 @@
 # CHA AROI BANG Management System
 
-This system is for Cha Aroi Bang Management System for BrahimBrews
+1. This system is for Cha Aroi Bang Management System for BrahimBrews
+2. Laravel 8
+3. Jetstream
 
 # Required installation
 
