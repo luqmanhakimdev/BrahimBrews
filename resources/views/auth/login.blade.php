@@ -38,9 +38,19 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-
                 <x-jet-button class="ml-4">
                     {{ __('Log in') }}
+                </x-jet-button>
+            </div>
+            <div class="mt-4">
+                <hr>
+            </div>
+            <div class="mt-4 flex justify-center">
+            <x-jet-label value="{{ __('New user?') }}" />
+            </div>
+            <div class="mt-4">
+            <x-jet-button class="group relative w-full flex justify-center">
+                    {{ __('Create account') }}
                 </x-jet-button>
             </div>
         </form>
