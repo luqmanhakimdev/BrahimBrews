@@ -1,6 +1,6 @@
 # CHA AROI BANG Management System
 
-This system is for Cha Aroi Bang Management System by BrahimBrews
+This system is for Cha Aroi Bang Management System for BrahimBrews
 
 # Required installation
 
