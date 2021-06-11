@@ -18,3 +18,8 @@ php artisan jetstream:install livewire
 ```bash
 npm install && npm run dev
 ```
+
+## For seed purpose
+```bash
+php artisan db:seed
+```
