@@ -38,7 +38,7 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-                <x-jet-button class="ml-4">
+                <x-jet-button class="ml-4 bg-green-600 hover:bg-green-500">
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>

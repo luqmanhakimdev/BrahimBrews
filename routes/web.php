@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
+use App\Models\Flavor;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,10 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $flavors = Flavor::all(); //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
+    return view('dashboard', compact('flavors')); //masuk dari atas nama table '$flavors'.
 })->name('dashboard');
+
+
 
 
