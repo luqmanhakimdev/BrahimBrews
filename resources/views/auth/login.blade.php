@@ -50,11 +50,13 @@
             </div>
             </form>
             <div class="mt-4">
-                <a href="{{ route('register') }}">
-                    <x-jet-button class="group relative w-full flex justify-center">
-                        {{ __('Create account') }}
-                    </x-jet-button>
-                </a>
+                <div class="text-center">
+                    <a href="{{ route('register') }}" style="text-decoration:none;">
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-outline-dark">Create account</button>
+                    </div>
+                    </a>
+                </div>
             </div>
         
     </x-jet-authentication-card>

@@ -7,26 +7,27 @@
 
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-            <!-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
-            </div> -->
          <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Flavor</th>
-                    <th scope="col"><div class="text-center">Stock left</div></th>
-                    <th scope="col"><div class="text-center">Action</div></th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">City</th>
+                    <th scope="col">State</th>
+            
                 </tr>
             </thead>
             <tbody>
 
-            @foreach($flavors as $flavor)
+            @foreach($users as $user)
                 <tr>
-                    <th scope="row">{{  $flavor->id }}</th>
-                    <td>{{ $flavor->flavor_name }}</td>
-                    <td><div class="text-center">{{ ($flavor->stock) }}</div></td>
-                    <td><div class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button></div></td>
+                    <th scope="row">{{  $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->city }}</td>
+                    <td>{{ $user->state }}</td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button></td>
                 </tr>
             @endforeach
             </tbody>

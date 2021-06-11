@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
             'name' => 'John',
             'email' => 'john@bb.my',
             'password' => Hash::make('john@1234'),
+            'city' => 'Shah Alam',
+            'state' => 'Selangor',
         ]);
     }
 }

@@ -17,13 +17,10 @@ class FlavorSeeder extends Seeder
     public function run()
     {   
         $flavor = array("Caramello Milk Tea","Chayen Milk Tea","Taro Temptation","Sweet Cornzs");   
-        $row = 1;
         foreach($flavor as $x){
         DB::table('flavors')->insert([
-            'id' => $row,
             'flavor_name' => $x
         ]);
-        $row++;
         }
     }
 }

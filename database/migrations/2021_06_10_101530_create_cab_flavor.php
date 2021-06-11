@@ -14,10 +14,9 @@ class CreateCabFlavor extends Migration
     public function up()
     {
         Schema::create('flavors', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->primary();
+            $table->id();
             $table->string('flavor_name');
-            $table->unsignedBigInteger('stock_in')->nullable();
-            $table->unsignedBigInteger('stock_out')->nullable();
+            $table->unsignedBigInteger('stock')->nullable();
         });
     }
 

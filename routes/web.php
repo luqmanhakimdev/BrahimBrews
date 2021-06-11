@@ -20,6 +20,8 @@ Route::get('/', function () {
     return redirect('login');
 });
 
+Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $flavors = Flavor::all(); //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
     return view('dashboard', compact('flavors')); //masuk dari atas nama table '$flavors'.
