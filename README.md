@@ -1,4 +1,4 @@
-![for  git-01](https://user-images.githubusercontent.com/81413229/121631723-3826fa00-cab2-11eb-83e7-89136912dabf.png)
+![github-01](https://user-images.githubusercontent.com/81413229/121632308-550ffd00-cab3-11eb-92fa-2a1fea090ce2.png)
 
 # CHA AROI BANG Management System
 
