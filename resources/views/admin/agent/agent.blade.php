@@ -61,7 +61,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success">Update</button>
+        <button type="button" class="btn btn-success">Update.</button>
       </div>
     </div>
   </div>
