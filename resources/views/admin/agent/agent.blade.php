@@ -39,6 +39,7 @@
         <!-- Button trigger modal -->
 
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -61,11 +62,12 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success">Update.</button>
+        <button type="submit" class="btn btn-success">Update</button>
       </div>
     </div>
   </div>
 </div>
+
 
 <script>
             var exampleModal = document.getElementById('exampleModal')

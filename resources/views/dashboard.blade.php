@@ -36,6 +36,7 @@
         <!-- Button trigger modal -->
 
 <!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -44,21 +45,18 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{{ route('update.stock') }}" method="POST">
+        @method('PUT')
         @csrf
           <div class="mb-3">
-            <label for="stock_in" class="col-form-label">Stock in:</label>
-            <input type="text" class="form-control" id="stock_in">
-          </div>
-          <div class="mb-3">
-            <label for="stock_out" class="col-form-label">Stock out:</label>
-            <input type="text" class="form-control" id="stock_out"></input>
-          </div>
-        </form>
+            <label for="stock_in" class="col-form-label">Stock:</label>
+            <input type="text" class="form-control" name="stock" value="{{$data['stock']}}">
+          </div> 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success">Update</button>
+        <button type="submit" class="btn btn-success">Update</button>
+        </form>
       </div>
     </div>
   </div>
