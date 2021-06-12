@@ -26,7 +26,7 @@
                     <th scope="row">{{  $flavor->id }}</th>
                     <td>{{ $flavor->flavor_name }}</td>
                     <td><div class="text-center">{{ ($flavor->stock) }}</div></td>
-                    <td><div class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button></div></td>
+                    <td><div class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button></div></td>
                 </tr>
             @endforeach
             </tbody>
@@ -70,7 +70,7 @@
             // Button that triggered the modal
             var button = event.relatedTarget
             // Extract info from data-bs-* attributes
-            var recipient = button.getAttribute('data-bs-whatever')
+            var recipient = button.getAttribute('data-bs-target')
             // If necessary, you could initiate an AJAX request here
             // and then do the updating in a callback.
             //
@@ -78,6 +78,7 @@
             var modalTitle = exampleModal.querySelector('.modal-title')
             var modalBodyInput = exampleModal.querySelector('.modal-body input')
 
+            modalTitle.textContent = 'Update stock ' + recipient
             modalBodyInput.value = recipient
             })
 
