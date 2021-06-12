@@ -7,9 +7,10 @@ use App\Models\User;
 
 class AppController extends Controller
 {
-    public function AllAgent(User $users)
+    public function AllAgent()
     {
-        return view('admin.agent.agent',compact('users'));
+        $user=User::all();
+        return view('admin.agent.agent',['users'=>$user]);
     }
 }
 
