@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCabFlavor extends Migration
+class CreateCabFlavorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -30,3 +30,4 @@ class CreateCabFlavor extends Migration
         Schema::dropIfExists('flavors');
     }
 }
+

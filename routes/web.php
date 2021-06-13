@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
-use App\Models\Flavor;
+use App\Models\CabFlavor;
 use App\Models\User;
 
 /*
@@ -30,7 +30,7 @@ Route::get('/dashboard', [AppController::class, 'UpdateStock'],)->name('stockerr
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $flavors = Flavor::all(); //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
+    $flavors = CabFlavor::all(); //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
     return view('dashboard', compact('flavors')); //masuk dari atas nama table '$flavors'.
 })->name('dashboard');
 

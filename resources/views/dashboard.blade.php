@@ -8,6 +8,16 @@
         <div class="py-12">
           <div class="container">
             <div class="row">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Today's update</h5>                   
+                      <!-- <canvas id="myChart" style="align:center;"></canvas>                              -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-sm-8">
                 <div class="card">
                   <div class="card-body">
@@ -94,5 +104,41 @@
       myModal.addEventListener('shown.bs.modal', function () {
         myInput.focus()
       })
+
+                   
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+
+
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var yValues = [1, 49, 44, 24, 15];
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Flavor stock"
+    }
+  }
+});
+</script>
 </script>
 </x-app-layout>
