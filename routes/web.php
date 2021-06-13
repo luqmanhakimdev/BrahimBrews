@@ -21,8 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
-Route::get('/dashboard/{data}', [AppController::class, 'ShowStock'],)->name('show.stock');
+Route::get('/dashboard', [AppController::class, 'ShowStock'],)->name('show.stock');
 Route::post('/dashboard', [AppController::class, 'UpdateStock'],)->name('update.stock');
+Route::get('/dashboard', [AppController::class, 'UpdateStock'],)->name('stockerror');
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

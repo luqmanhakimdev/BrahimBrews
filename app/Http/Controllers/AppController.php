@@ -23,9 +23,17 @@ class AppController extends Controller
     public function UpdateStock(Request $req)
     {   
         $data=Flavor::find($req->id);
-        $data->stock=$req->stock;
-        
-        $stock->save();
+        $stock_in=$req->stock_in;
+        $stock_out=$req->stock_out;
+        $stock_left=$req->stock_left;
+        $final=$stock_left+$stock_in-$stock_out;
+        if ($final<0)
+        {
+            return view('stockerror');
+        }
+        $data->stock=$final;
+        $data->save();
+        return redirect('dashboard');
     }
 }
 

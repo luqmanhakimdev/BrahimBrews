@@ -19,7 +19,8 @@ class FlavorSeeder extends Seeder
         $flavor = array("Caramello Milk Tea","Chayen Milk Tea","Taro Temptation","Sweet Cornzs");   
         foreach($flavor as $x){
         DB::table('flavors')->insert([
-            'flavor_name' => $x
+            'flavor_name' => $x,
+            'stock' => 0,
         ]);
         }
     }
