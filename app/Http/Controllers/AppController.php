@@ -35,5 +35,16 @@ class AppController extends Controller
         $data->save();
         return redirect('dashboard');
     }
+    public function AddFlavor(Request $req)
+    {
+        $validated = $req->validate
+        ([
+        'add_flavor' => 'required|unique:posts|max:255',
+        ],
+        [
+        'add_flavor.required' => 'Flavor required.',
+        ]
+        );
+    }
 }
 

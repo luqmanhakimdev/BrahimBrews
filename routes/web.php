@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
 Route::get('/dashboard', [AppController::class, 'ShowStock'],)->name('show.stock');
 Route::post('/dashboard', [AppController::class, 'UpdateStock'],)->name('update.stock');
+Route::put('/dashboard', [AppController::class, 'AddFlavor'],)->name('add.flavor');
 Route::get('/dashboard', [AppController::class, 'UpdateStock'],)->name('stockerror');
 
 

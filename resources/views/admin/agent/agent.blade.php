@@ -29,7 +29,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->city }}</td>
                     <td>{{ $user->state }}</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Update</button></td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Edit</button></td>
                 </tr>
             @endforeach
             </tbody>
