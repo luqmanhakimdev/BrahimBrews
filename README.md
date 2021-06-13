@@ -20,6 +20,9 @@ php artisan jetstream:install livewire
 ```bash
 npm install && npm run dev
 ```
+```bash
+npm install chart.js
+```
 
 ## For seed purpose
 ```bash
