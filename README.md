@@ -10,7 +10,21 @@ Instagram: https://www.instagram.com/aroibanghq/
 
 ## Required installation
 
-1. Install application dependencies
+1. First setup
+
+```bash
+composer install
+```
+- Change env.example to env
+
+```bash
+php artisan key:generate
+```
+table name = brahimbrews
+
+
+2. Install application dependencies
+
 ```bash
 composer require laravel/jetstream
 ```
@@ -26,5 +40,5 @@ npm install chart.js
 
 ## For seed purpose
 ```bash
-php artisan db:seed
+php artisan migrate:fresh --seed
 ```
