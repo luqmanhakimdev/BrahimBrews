@@ -17,7 +17,7 @@ class AppController extends Controller
 
     public function ShowStock()
     {   
-        $data=Flavor::find($id);
+        $data=CabFlavor::find($id);
         return view('show.stock',['data'=>$data]);
     }
 
@@ -36,27 +36,25 @@ class AppController extends Controller
         $data->save();
         return redirect('dashboard');
     }
+
     public function AddFlavor(Request $req)
     {
-        $validatedData = $req->validate
-        ([
-        'add_flavor' => 'required|unique:posts|max:255',
-        ],
-        [
-        'add_flavor.required' => 'Flavor required.',
-        ]
-        );
 
-        // Flavor::insert
+        // $validatedData = $req->validate
         // ([
-        //     'flavor_name' => $req->add_flavor,
-        //     'stock' => 0,
+        // 'flavor_name' => 'required|unique:flavors|max:255',
+        // ],
+        // [
+        // 'add_flavor.required' => 'Flavor required.',
+        // ]
+        // );
 
-        // ]);
-        // $query = DB::table('flavors')->insert
-        // ([
-        //     'flavor_name'->$req->input('add_flavor')
-        // ]);
+        $data = new CabFlavor;
+        $data->flavor_name = $req->add_flavor;
+        $data->stock = 0;
+        $data->save();
+
+        return redirect('dashboard');
 
     }
 }
