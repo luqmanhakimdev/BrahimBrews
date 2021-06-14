@@ -47,6 +47,7 @@ class AppController extends Controller
         $data->flavor_name = $req->add_flavor;
         $data->stock = 0;
         $data->save();
+        return redirect ('dashboard');
         
     
     }
