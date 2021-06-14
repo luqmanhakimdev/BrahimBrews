@@ -20,7 +20,7 @@ composer install
 ```bash
 php artisan key:generate
 ```
-table name = brahimbrews
+- table name = brahimbrews
 
 
 2. Install application dependencies
