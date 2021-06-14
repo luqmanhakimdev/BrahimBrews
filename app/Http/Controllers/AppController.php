@@ -15,11 +15,7 @@ class AppController extends Controller
         return view('admin.agent.agent',['users'=>$user]);
     }
 
-    public function ShowStock()
-    {   
-        $data=CabFlavor::find($id);
-        return view('show.stock',['data'=>$data]);
-    }
+    
 
     public function UpdateStock(Request $req)
     {   
@@ -55,6 +51,15 @@ class AppController extends Controller
         $data->save();
 
         return redirect('dashboard');
+
+    }
+
+    public function DeleteFlavor($id)
+    {
+
+       $data = CabFlavor::find($id);
+       $data->delete();
+       return redirect ('dashboard');
 
     }
 }

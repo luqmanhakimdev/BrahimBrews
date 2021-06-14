@@ -21,16 +21,16 @@ Route::get('/', function () {
 });
 
 Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
-Route::get('/dashboard', [AppController::class, 'ShowStock'],)->name('show.stock');
-Route::post('/dashboard', [AppController::class, 'UpdateStock'],)->name('update.stock');
-Route::put('/dashboard', [AppController::class, 'AddFlavor'],)->name('add.flavor');
-Route::get('/dashboard', [AppController::class, 'UpdateStock'],)->name('stockerror');
+Route::post('/updatestock', [AppController::class, 'UpdateStock'],)->name('update.stock');
+Route::put('/addflavor', [AppController::class, 'AddFlavor'],)->name('add.flavor');
+Route::get('/stockerror', [AppController::class, 'UpdateStock'],)->name('stockerror');
+Route::get('/delete/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
 
 
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $flavors = CabFlavor::all(); //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
+    $flavors = CabFlavor::all();     //nama table dari DB. Kena initialise dalam Model. Tgk model apa kau pakai.
     return view('dashboard', compact('flavors')); //masuk dari atas nama table '$flavors'.
 })->name('dashboard');
 
