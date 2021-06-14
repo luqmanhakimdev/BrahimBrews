@@ -17,9 +17,9 @@ class AgentSeeder extends Seeder
     {
         DB::table('agents')->insert([
             
-            'name' => 'John',
-            'email' => 'john@bb.my',
-            'password' => Hash::make('john@1234'),
+            'name' => 'Muhammad Zul',
+            'email' => 'zul@bb.my',
+            'ic' => '980912084567',
             'city' => 'Shah Alam',
             'state' => 'Selangor',
         ]);
