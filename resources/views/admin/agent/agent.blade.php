@@ -6,8 +6,14 @@
     </x-slot>
 
     <div class="py-12">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">All agents</h5>
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
-         <table class="table">
+         <table class="table table align-middle" >
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -16,8 +22,6 @@
                     <th scope="col">City</th>
                     <th scope="col">State</th>
                     <th scope="col">Action</th>
-
-            
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +38,11 @@
             @endforeach
             </tbody>
             </table>
+             </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
         <!-- Button trigger modal -->
