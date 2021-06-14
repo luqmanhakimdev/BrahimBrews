@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-12">
                 <div class="card mb-4">
                   <div class="card-body">
                     <h5 class="card-title text-center">All agents</h5>

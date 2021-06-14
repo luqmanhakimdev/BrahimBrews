@@ -36,22 +36,19 @@ class AppController extends Controller
     public function AddFlavor(Request $req)
     {
 
-        // $validatedData = $req->validate
-        // ([
-        // 'flavor_name' => 'required|unique:flavors|max:255',
-        // ],
-        // [
-        // 'add_flavor.required' => 'Flavor required.',
-        // ]
-        // );
-
+        $validated = $req->validate([
+            'add_flavor' => 'required|max:255',
+        ],
+        [
+            'add_flavor.required' => 'Please insert flavor name.'
+        ]);
+        
         $data = new CabFlavor;
         $data->flavor_name = $req->add_flavor;
         $data->stock = 0;
         $data->save();
-
-        return redirect('dashboard');
-
+        
+    
     }
 
     public function DeleteFlavor($id)

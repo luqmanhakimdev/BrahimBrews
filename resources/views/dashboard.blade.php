@@ -28,16 +28,18 @@ var forvaluechart = [];
                     <h5 class="card-title text-center">Flavor stock</h5>
                       <table class="table align-middle">
                         <thead>
-                              <tr>
-                                  
+                              <tr> 
+                                  <th scope="row">No</th>         
                                   <th scope="col">Flavor</th>
                                   <th scope="col"><div class="text-center">Stock left</div></th>
                                   <th colspan="2"><div class="text-center">Action</div></th>
                               </tr>
                         </thead>
                         <tbody>
+                          @php($count = 1)
                           @foreach($flavors as $flavor)
-                              <tr>                                 
+                              <tr>
+                                  <th scope="row">{{ $count }}</th>                                 
                                   <td>{{ $flavor->flavor_name }}</td>
                                   <td><div class="text-center">{{ ($flavor->stock) }}</div></td>
                                   <td><div class="text-center"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ ($flavor->id) }}" >Update</button></div></td>
@@ -82,7 +84,7 @@ var forvaluechart = [];
 fornamechart[i]="{{ $flavor->flavor_name }}"; 
 forvaluechart[i]="{{ $flavor->stock }}";
 i+=1;
-</script>
+</script>                   @php($count++)
                             @endforeach
                         </tbody>
                       </table>
