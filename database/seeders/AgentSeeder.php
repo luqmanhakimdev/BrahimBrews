@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Database\Seeders\Faker\Factory;
 
 class AgentSeeder extends Seeder
 {
@@ -15,13 +17,17 @@ class AgentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('agents')->insert([
-            
-            'name' => 'Muhammad Zul',
-            'email' => 'zul@bb.my',
-            'ic' => '980912084567',
-            'city' => 'Shah Alam',
-            'state' => 'Selangor',
-        ]);
+        $faker=\Faker\Factory::create();
+        for($x=0;$x<20;$x++){
+            DB::table('agents')->insert([       
+                'name' => $faker->name(),
+                'email' => $faker->email(),
+                'ic' => $faker->unique()->numerify('######-##-####'),
+                'city' => $faker->cityPrefix(),
+                'state' => $faker->state(),
+            ]);
+
+
+        }
     }
 }

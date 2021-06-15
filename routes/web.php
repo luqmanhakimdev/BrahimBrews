@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Models\CabFlavor;
 use App\Models\User;
+use App\Models\Agent;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +20,18 @@ use App\Models\User;
 Route::get('/', function () {
     return redirect('login');
 });
+Route::get('/logout', function () {
+    return redirect('login');
+});
 
 Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
 Route::post('/updatestock', [AppController::class, 'UpdateStock'],)->name('update.stock');
+Route::post('/updateagent', [AppController::class, 'UpdateAgent'],)->name('update.agent');
+
 Route::put('/addflavor', [AppController::class, 'AddFlavor'],)->name('add.flavor');
 Route::get('/stockerror', [AppController::class, 'UpdateStock'],)->name('stockerror');
-Route::get('/delete/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
+Route::get('/delete/flavor/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
+Route::get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
 
 
 

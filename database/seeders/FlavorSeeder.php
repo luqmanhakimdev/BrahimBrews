@@ -20,7 +20,7 @@ class FlavorSeeder extends Seeder
         foreach($flavor as $x){
         DB::table('flavors')->insert([
             'flavor_name' => $x,
-            'stock' => 0,
+            'stock' => 100,
         ]);
         }
     }

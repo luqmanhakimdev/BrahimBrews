@@ -40,5 +40,9 @@ npm install chart.js
 
 ## For seed purpose
 ```bash
+composer require fakerphp/faker
+```
+```bash
 php artisan migrate:fresh --seed
 ```
+

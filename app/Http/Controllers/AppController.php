@@ -6,24 +6,26 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\CabFlavor;
+use App\Models\Agent;
 
 class AppController extends Controller
 {
     public function AllAgent()
     {
-        $user=User::all();
-        return view('admin.agent.agent',['users'=>$user]);
+        $agent = Agent::all();
+        $agent = Agent::paginate(10);
+        return view('admin.agent.agent',['agents'=>$agent]);
     }
 
     
 
     public function UpdateStock(Request $req)
     {   
-        $data=CabFlavor::find($req->id);
-        $stock_in=$req->stock_in;
-        $stock_out=$req->stock_out;
-        $stock_left=$req->stock_left;
-        $final=$stock_left+$stock_in-$stock_out;
+        $data = CabFlavor::find($req->id);
+        $stock_in = $req->stock_in;
+        $stock_out = $req->stock_out;
+        $stock_left = $req->stock_left;
+        $final = $stock_left+$stock_in-$stock_out;
         if ($final<0)
         {
             return view('stockerror');
@@ -31,6 +33,16 @@ class AppController extends Controller
         $data->stock=$final;
         $data->save();
         return redirect('dashboard');
+    }
+
+    public function UpdateAgent(Request $req)
+    {   
+        $data = Agent::find($req->id);
+        $data->email = $req->email;
+        $data->city = $req->city;
+        $data->state = $req->state;
+        $data->save();
+        return redirect ('agent');
     }
 
     public function AddFlavor(Request $req)
@@ -58,6 +70,15 @@ class AppController extends Controller
        $data = CabFlavor::find($id);
        $data->delete();
        return redirect ('dashboard');
+
+    }
+
+    public function DeleteAgent($id)
+    {
+
+       $data = Agent::find($id);
+       $data->delete();
+       return redirect ('agent');
 
     }
 }
