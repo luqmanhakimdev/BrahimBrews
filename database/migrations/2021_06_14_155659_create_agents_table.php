@@ -21,6 +21,8 @@ class CreateAgentsTable extends Migration
             $table->string('ic')->unique();
             $table->string('city');
             $table->string('state');
+            $table->unsignedBigInteger('divison_id');
+            $table->foreign('divison_id')->references('id')->on('divisons');
         });
     }
 

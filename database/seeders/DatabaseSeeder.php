@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             FlavorSeeder::class,
             AgentSeeder::class,
+            DivisonSeeder::class,
         ]);
     }
 
