@@ -16,8 +16,43 @@ class AppController extends Controller
         $agent = Agent::paginate(10);
         return view('admin.agent.agent',['agents'=>$agent]);
     }
+    public function AddAgentPage()
+    {
+        return view('admin.agent.addagent');
+    }
 
-    
+    public function UpdateAgent(Request $req)
+    {   
+        $data = Agent::find($req->id);
+        $data->email = $req->email;
+        $data->city = $req->city;
+        $data->state = $req->state;
+        $data->save();
+        return redirect ('agent');
+    }
+
+    public function DeleteAgent($id)
+    {
+
+       $data = Agent::find($id);
+       $data->delete();
+       return redirect ('agent');
+
+    }
+
+    public function AddAgent(Request $req)
+    {
+        $data = new Agent;
+        $data->name = $req->name;
+        $data->email = $req->email;
+        $data->ic = $req->ic;
+        $data->city = $req->city;
+        $data->state = $req->state;
+        $data->divison_id = $req->divison_id;
+        $data->save();
+        return redirect('agent');
+
+    }
 
     public function UpdateStock(Request $req)
     {   
@@ -35,16 +70,6 @@ class AppController extends Controller
         return redirect('dashboard');
     }
 
-    public function UpdateAgent(Request $req)
-    {   
-        $data = Agent::find($req->id);
-        $data->email = $req->email;
-        $data->city = $req->city;
-        $data->state = $req->state;
-        $data->save();
-        return redirect ('agent');
-    }
-
     public function AddFlavor(Request $req)
     {
 
@@ -59,9 +84,7 @@ class AppController extends Controller
         $data->flavor_name = $req->add_flavor;
         $data->stock = 0;
         $data->save();
-        return redirect ('dashboard');
-        
-    
+        return redirect ('dashboard');    
     }
 
     public function DeleteFlavor($id)
@@ -70,15 +93,6 @@ class AppController extends Controller
        $data = CabFlavor::find($id);
        $data->delete();
        return redirect ('dashboard');
-
-    }
-
-    public function DeleteAgent($id)
-    {
-
-       $data = Agent::find($id);
-       $data->delete();
-       return redirect ('agent');
 
     }
 }

@@ -80,11 +80,11 @@ var forvaluechart = [];
                                 </div>
                               </div>
                             </div>
-<script>
-fornamechart[i]="{{ $flavor->flavor_name }}"; 
-forvaluechart[i]="{{ $flavor->stock }}";
-i+=1;
-</script>                   @php($count++)
+                                          <script>
+                                          fornamechart[i]="{{ $flavor->flavor_name }}"; 
+                                          forvaluechart[i]="{{ $flavor->stock }}";
+                                          i+=1;
+                                          </script>                   @php($count++)
                             @endforeach
                         </tbody>
                       </table>
