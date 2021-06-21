@@ -22,6 +22,7 @@
                     <th scope="col">I/C</th>
                     <th scope="col">City</th>
                     <th scope="col">State</th>
+                    <th scope="col">Type</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <td>{{ $agent->ic }}</td>
                     <td>{{ $agent->city }}</td>
                     <td>{{ $agent->state }}</td>
+                    <td>{{ $agent->divison_id }}</td>
                     
                     <td>
                         <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $agent->id }}">

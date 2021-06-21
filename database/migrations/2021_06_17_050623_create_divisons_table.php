@@ -15,7 +15,6 @@ class CreateDivisonsTable extends Migration
     {
         Schema::create('divisons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('divison_id')->unique();
             $table->string('divison_name');
         });
     }

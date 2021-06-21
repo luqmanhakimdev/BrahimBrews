@@ -13,6 +13,6 @@ class Divison extends Model
 
     protected $fillable = [
 
-        'divison_name';
+        'divison_name',
     ];
 }
