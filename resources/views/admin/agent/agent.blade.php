@@ -36,8 +36,21 @@
                                       <td>{{ $agent->ic }}</td>
                                       <td>{{ $agent->city }}</td>
                                       <td>{{ $agent->state }}</td>
-                                      <td>{{ $agent->divison_id }}</td>
-                                      
+                                      <td>
+                                      @if ($agent->divison_id == 1)
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                {{ $agent->divison->divison_name }}
+                                            </span>
+                                        @elseif ($agent->divison_id == 2)
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                                {{ $agent->divison->divison_name }}
+                                            </span>
+                                        @else
+                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                {{ $agent->divison->divison_name }}
+                                            </span>
+                                        @endif
+                                      </td>
                                       <td>
                                           <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $agent->id }}">
                                               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

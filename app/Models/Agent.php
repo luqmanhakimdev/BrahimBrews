@@ -21,4 +21,8 @@ class Agent extends Model
         'state',
         
     ];
+
+    public function divison(){
+        return $this->belongsTo(Divison::class);
+    }
 }

@@ -9,10 +9,14 @@ class Divison extends Model
 {
     use HasFactory;
     public $timestamps=false;
-    protected $table = 'divisions';
+    protected $table = 'divisons';
 
     protected $fillable = [
 
         'divison_name',
     ];
+
+    public function agents(){
+        return $this->hasMany(Agent::class);
+    }
 }
