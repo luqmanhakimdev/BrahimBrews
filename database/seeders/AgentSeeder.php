@@ -25,7 +25,7 @@ class AgentSeeder extends Seeder
                 'ic' => $faker->unique()->numerify('######-##-####'),
                 'city' => $faker->cityPrefix(),
                 'state' => $faker->state(),
-                'divison_id' => 2,
+                'divison_id' => $faker->numberBetween(1,3),
             ]);
 
 

@@ -12,24 +12,34 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title text-center">Add agents</h5>
-                            <form > 
+                            <form action="{{  route('add.agent')  }}" method="POST"> 
+                            @csrf
                             <div class="mb-3">
                                 <label for="labelname" class="form-label">Name</label>
-                                <input type="name" class="form-control" id="labelname">
+                                <input type="name" name="name" class="form-control" id="labelname">
+                                @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="labelemail" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="labelemail" aria-describedby="emailHelp">
+                                <input type="email" name="email" class="form-control" id="labelemail" aria-describedby="emailHelp">
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="labelic" class="form-label">IC</label>
-                                <input type="ic" class="form-control" id="labelic" aria-describedby="icHelp">
+                                <input type="ic" name="ic" class="form-control" id="labelic" aria-describedby="icHelp">
                                 <div id="icHelp" class="form-text">Ex: 980512-09-4543</div>
+                                @error('ic')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>State</option>
+                            <select class="form-select" name="state" aria-label="Default select example">
+                                <option selected value="" disabled>State</option>
                                 <option value="Perlis">Perlis</option>
                                 <option value="Kedah">Kedah</option>
                                 <option value="Penang">Penang</option>
@@ -47,18 +57,27 @@
                                 <option value="Sarawak">Sarawak</option>
                                 <option value="Labuan">Labuan</option>
                             </select>
+                            @error('state')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="labelcity" class="form-label">City</label>
-                                <input type="city" class="form-control" id="labelcity">
+                                <input type="city" name="city" class="form-control" id="labelcity">
+                                @error('city')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Agent Type</option>
+                            <select class="form-select" name="divison_id" aria-label="Default select example">
+                                <option selected value="" disabled>Agent Type</option>
                                 <option value="1">Leader</option>
-                                <option value="2">Standard agent</option>
+                                <option value="2">Agent</option>
                                 <option value="3">Dropship</option>
                             </select>
+                            @error('divison_id')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
                             </div>
                             <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -15,7 +15,7 @@ class DivisonSeeder extends Seeder
      */
     public function run()
     {
-        $type = array("Leader","Standard agent","Dropship");   
+        $type = array("Leader","Agent","Dropship");   
         foreach($type as $t){
         DB::table('divisons')->insert([
             'divison_name' => $t,

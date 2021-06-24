@@ -27,8 +27,9 @@ class AppController extends Controller
         $data->email = $req->email;
         $data->city = $req->city;
         $data->state = $req->state;
+        $data->divison_id = $req->divison_id;
         $data->save();
-        return redirect ('agent');
+        return redirect()->back();
     }
 
     public function DeleteAgent($id)
@@ -42,6 +43,25 @@ class AppController extends Controller
 
     public function AddAgent(Request $req)
     {
+        $validated = $req -> validate(
+        [
+            'name' => 'required|max:100',
+            'email' => 'required',
+            'ic' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'divison_id' => 'required',
+
+        ],
+        [
+            'name.required' => 'Name required.',
+            'email.required' => 'Email required.',
+            'ic.required' => 'IC required.',
+            'state.required' => 'State required.',
+            'city.required' => 'City required.',
+            'divison_id.required' => 'Agent type required.',
+        ]);
+
         $data = new Agent;
         $data->name = $req->name;
         $data->email = $req->email;
@@ -73,7 +93,8 @@ class AppController extends Controller
     public function AddFlavor(Request $req)
     {
 
-        $validated = $req->validate([
+        $validated = $req->validate(
+        [
             'add_flavor' => 'required|max:255',
         ],
         [
@@ -95,5 +116,7 @@ class AppController extends Controller
        return redirect ('dashboard');
 
     }
+
+    
 }
 

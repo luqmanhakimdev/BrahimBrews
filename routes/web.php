@@ -25,16 +25,17 @@ Route::get('/logout', function () {
 });
 
 
-Route::get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
-Route::get('/addagent', [AppController::class, 'AddAgentPage'],)->name('add.agent.page');
+Route::middleware(['auth:sanctum', 'verified'])->get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
+Route::middleware(['auth:sanctum', 'verified'])->get('/addagentpage', [AppController::class, 'AddAgentPage'],)->name('add.agent.page');
+Route::middleware(['auth:sanctum', 'verified'])->post('/addagent', [AppController::class, 'AddAgent'],)->name('add.agent');
 
-Route::post('/updatestock', [AppController::class, 'UpdateStock'],)->name('update.stock');
-Route::post('/updateagent', [AppController::class, 'UpdateAgent'],)->name('update.agent');
+Route::middleware(['auth:sanctum', 'verified'])->post('/updatestock', [AppController::class, 'UpdateStock'],)->name('update.stock');
+Route::middleware(['auth:sanctum', 'verified'])->post('/updateagent', [AppController::class, 'UpdateAgent'],)->name('update.agent');
 
-Route::put('/addflavor', [AppController::class, 'AddFlavor'],)->name('add.flavor');
-Route::get('/stockerror', [AppController::class, 'UpdateStock'],)->name('stockerror');
-Route::get('/delete/flavor/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
-Route::get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
+Route::middleware(['auth:sanctum', 'verified'])->put('/addflavor', [AppController::class, 'AddFlavor'],)->name('add.flavor');
+Route::middleware(['auth:sanctum', 'verified'])->get('/stockerror', [AppController::class, 'UpdateStock'],)->name('stockerror');
+Route::middleware(['auth:sanctum', 'verified'])->get('/delete/flavor/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
+Route::middleware(['auth:sanctum', 'verified'])->get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
 
 
 

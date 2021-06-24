@@ -8,15 +8,20 @@
         <div class="py-12">
           <div class="container">
             <div class="row">
-              <div class="col-sm-10">
+              <div class="col-sm-12">
                 <div class="card mb-4">
                   <div class="card-body">
-                    <h5 class="card-title text-center">All agents</h5>
-       
+                    <h2 class="card-title text-center">All agents</h2>
+                    <div class="mb-4">
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                    <a href = "{{ route('add.agent.page') }}">
+                    <button type="button" class="btn btn-primary">Register new agent</button>
+                    </a>
+                    </div>
+                    </div>
                           <table class="table table align-middle" >
                               <thead>
                                   <tr>
-                                      <th scope="col">No</th>
                                       <th scope="col">Name</th>
                                       <th scope="col">Email</th>
                                       <th scope="col">I/C</th>
@@ -27,10 +32,8 @@
                                   </tr>
                               </thead>
                               <tbody>
-                              @php($count=1)
                               @foreach($agents as $agent)
                                   <tr>
-                                      <th scope="row">{{  $count }}</th>
                                       <td>{{ $agent->name }}</td>
                                       <td>{{ $agent->email }}</td>
                                       <td>{{ $agent->ic }}</td>
@@ -67,7 +70,6 @@
                                           </a>
                                       </td>
                                   </tr>
-                              @php($count++)
                               <!-- Button trigger modal -->
                               <!-- Modal -->
                                               <div class="modal fade" id="exampleModal{{ ($agent->id) }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,12 +84,20 @@
                                                                 @csrf
                                                                   <div class="mb-3">
                                                                     <input type="hidden" name="id" value="{{ ($agent->id) }}"></input>
-                                                                    <label for="stock_in" class="col-form-label">Email:</label>
+                                                                    <label class="col-form-label">Email:</label>
                                                                     <input type="text" class="form-control" name="email" value="{{ ($agent->email) }}" >
-                                                                    <label for="stock_in" class="col-form-label">City:</label>
+                                                                    <label class="col-form-label">City:</label>
                                                                     <input type="text" class="form-control" name="city" value="{{ ($agent->city) }}" >
-                                                                    <label for="stock_in" class="col-form-label">State:</label>
+                                                                    <label class="col-form-label">State:</label>
                                                                     <input type="text" class="form-control" name="state" value="{{ ($agent->state) }}" >
+                                                                    <label class="col-form-label">Type:</label>
+                                                                    <select class="form-select" name="divison_id" aria-label="Default select example">
+                                                                        <option selected value="{{ ($agent->divison_id) }}" disabled>{{ ($agent->divison->divison_name) }}</option>
+                                                                        <option value="1">Leader</option>
+                                                                        <option value="2">Agent</option>
+                                                                        <option value="3">Dropship</option>
+                                                                    </select>
+                                                                    
                                                                     
                                                                   </div> 
                                                             </div>
@@ -106,19 +116,7 @@
               </div>  
             </div>  
           </div>
-                <div class="col-sm-2">
-                  <div class="card mb-4">
-                    <div class="card-body">
-                      <h5 class="card-title">Register agent</h5>
-                      <p class="card-text">Register new agent to the team.</p>
-                      <a href = "{{ route('add.agent.page') }}">
-                      <div class="d-grid gap-2">
-                      <button type="button" class="btn btn-primary">Register</button>
-                      </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                
         </div>
 
                 
