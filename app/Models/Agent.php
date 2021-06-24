@@ -19,6 +19,7 @@ class Agent extends Model
         'ic',
         'city',
         'state',
+        'divison_id',
         
     ];
 
