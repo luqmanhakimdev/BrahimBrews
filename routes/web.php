@@ -25,6 +25,7 @@ Route::get('/logout', function () {
 });
 
 
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/agent', [AppController::class, 'AllAgent'],)->name('agent');
 Route::middleware(['auth:sanctum', 'verified'])->get('/addagentpage', [AppController::class, 'AddAgentPage'],)->name('add.agent.page');
 Route::middleware(['auth:sanctum', 'verified'])->post('/addagent', [AppController::class, 'AddAgent'],)->name('add.agent');
@@ -36,6 +37,13 @@ Route::middleware(['auth:sanctum', 'verified'])->put('/addflavor', [AppControlle
 Route::middleware(['auth:sanctum', 'verified'])->get('/stockerror', [AppController::class, 'UpdateStock'],)->name('stockerror');
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/flavor/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
+
+Route::get('/search', [AppController::class, 'SearchAgent'],)->name('search.agent');
+Route::get('/search/agent', [AppController::class, 'search'],)->name('search');
+
+
+
+
 
 
 

@@ -4,21 +4,36 @@
             Welcome, <b>{{  Auth::user()->name }}</b>
         </h2>
     </x-slot>
-
+  
         <div class="py-12">
           <div class="container">
+            <div class="row">
+            <div class="col-sm-9">
+              <div class="card mb-4">
+                <div class="card-body">
+                <div class="input-group mb-0">
+                  <input type="text" class="form-control" placeholder="Search" id="search">
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card mb-4">
+                <div class="card-body"> 
+                <div class="d-flex justify-content-center">
+                      <a href = "{{ route('add.agent.page') }}">
+                        <button type="button" class="btn btn-primary">Register new agent</button>
+                      </a>   
+                </div>     
+                </div>
+              </div>
+            </div>
+            <div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="card mb-4">
                   <div class="card-body">
                     <h2 class="card-title text-center">All agents</h2>
-                    <div class="mb-4">
-                    <div class="d-flex flex-row-reverse bd-highlight">
-                    <a href = "{{ route('add.agent.page') }}">
-                    <button type="button" class="btn btn-primary">Register new agent</button>
-                    </a>
-                    </div>
-                    </div>
                           <table class="table table align-middle" >
                               <thead>
                                   <tr>
@@ -115,19 +130,8 @@
                               {{ $agents->links() }}   
               </div>  
             </div>  
-          </div>
-                
+          </div>             
         </div>
-
-                
-
-
-
-                            
-                            
-
-
-
 
 <script type="text/javascript">
       var myModal = document.getElementById('myModal')
@@ -136,7 +140,6 @@
         myInput.focus()
       })                 
 </script>
-
         </div>
     </div>
 </x-app-layout>
