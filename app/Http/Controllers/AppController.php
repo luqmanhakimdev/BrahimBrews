@@ -116,25 +116,19 @@ class AppController extends Controller
        return redirect ('dashboard');
 
     }
-    public function search(Request $request){
-        
-        if($request->ajax()) {      
-            $data = Agent::where('name', 'LIKE', $request->country.'%')
-                ->get();        
-            $output = '';         
-            if (count($data)>0) {            
-                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';            
-                foreach ($data as $row){
-                    $output .= '<li class="list-group-item">'.$row->name.'</li>';
-                }
-                $output .= '</ul>';
-            }
-            else {            
-                $output .= '<li class="list-group-item">'.'No results'.'</li>';
-            }
-            return $output;
+    public function searchlive(Request $request_val)
+{
+        $search_val = $request_val->id;
+        if (is_null($search_val))
+        {
+            return view('demos.searchlive');
         }
-    }
+        else
+        {
+            $posts_data = Post::where('title','LIKE',"%{$search_val}%")->get();
+            return view('demos.searchLiveajax')->withPosts($posts_data);
+        }
+}
 
     public function SearchAgent()
     {

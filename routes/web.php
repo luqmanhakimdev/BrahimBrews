@@ -39,7 +39,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/delete/flavor/{id}', [App
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
 
 Route::get('/search', [AppController::class, 'SearchAgent'],)->name('search.agent');
-Route::get('/search/agent', [AppController::class, 'search'],)->name('search');
+Route::get('/search/details', [AppController::class, 'searchlive'],)->name('search');
 
 
 
