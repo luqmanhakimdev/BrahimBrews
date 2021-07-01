@@ -132,7 +132,9 @@ class AppController extends Controller
 
     public function SearchAgent()
     {
-        return view('admin.agent.search');;
+        $agent = Agent::all();
+        $agent = Agent::paginate(10);
+        return view('admin.agent.search',['agents'=>$agent]);
     }
 }
 
