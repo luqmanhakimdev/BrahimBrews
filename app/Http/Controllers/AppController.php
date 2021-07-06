@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use App\Models\CabFlavor;
 use App\Models\Agent;
@@ -135,6 +136,12 @@ class AppController extends Controller
         $agent = Agent::all();
         $agent = Agent::paginate(10);
         return view('admin.agent.search',['agents'=>$agent]);
+    }
+
+    public function vaccineApi()
+    {
+        $data = Http::get('http://localhost/api/vaccination/stats/malaysia:8001')->json();
+        return view('vaccineapi',['data'=>$data]);
     }
 }
 

@@ -38,6 +38,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/stockerror', [AppControll
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/flavor/{id}', [AppController::class, 'DeleteFlavor'],)->name('delete.flavor');
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/agent/{id}', [AppController::class, 'DeleteAgent'],)->name('delete.agent');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/vaccinemalaysia', [AppController::class, 'vaccineApi'],)->name('vaccineapi');
+
+
 Route::get('/search', [AppController::class, 'SearchAgent'],)->name('search.agent');
 Route::get('/search/details', [AppController::class, 'searchlive'],)->name('search');
 
